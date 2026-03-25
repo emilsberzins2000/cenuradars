@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CenuRadars — cenu salīdzināšana Latvijā</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__inner">
+      <div>
+        <p class="eyebrow">Latvijas cenu salīdzināšana</p>
+        <h1>CenuRadars</h1>
+        <p class="hero__text">
+          Salīdzini cenas pārtikai, elektronikai un ikdienas precēm no populāriem Latvijas veikaliem vienuviet.
+        </p>
+      </div>
+      <div class="hero__card">
+        <div class="stat">
+          <strong id="productCount">0</strong>
+          <span>preces demo katalogā</span>
+        </div>
+        <div class="stat">
+          <strong>20+</strong>
+          <span>veikalu zīmoli v1 dizainā</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="ad-banner" aria-label="Reklāma">
+      <span class="ad-label">Reklāma</span>
+      <div class="ad-banner__content">Tava reklāma šeit — banneris 970×250 / 728×90</div>
+    </section>
+
+    <section class="controls">
+      <div class="search-wrap">
+        <input id="searchInput" type="search" placeholder="Meklē preci, piemēram, piens, dators, kafija..." />
+      </div>
+
+      <div class="filters">
+        <select id="categoryFilter">
+          <option value="all">Visas kategorijas</option>
+        </select>
+
+        <select id="storeFilter">
+          <option value="all">Visi veikali</option>
+        </select>
+
+        <select id="sortFilter">
+          <option value="best">Labākais piedāvājums</option>
+          <option value="lowest">Lētākā cena</option>
+          <option value="highest">Dārgākā cena</option>
+          <option value="savings">Lielākā starpība</option>
+        </select>
+      </div>
+    </section>
+
+    <section class="stores-strip" id="storesStrip"></section>
+
+    <section class="results-header">
+      <div>
+        <h2>Salīdzinājumi</h2>
+        <p id="resultsInfo">Notiek ielāde...</p>
+      </div>
+    </section>
+
+    <section id="results" class="results-grid"></section>
+  </main>
+
+  <template id="productTemplate">
+    <article class="product-card">
+      <div class="product-card__top">
+        <div>
+          <p class="product-category"></p>
+          <h3 class="product-name"></h3>
+        </div>
+        <div class="pill savings-pill"></div>
+      </div>
+
+      <div class="best-offer">
+        <span>Labākā cena</span>
+        <strong class="best-price"></strong>
+        <small class="best-store"></small>
+      </div>
+
+      <div class="offers"></div>
+    </article>
+  </template>
+
+  <template id="offerTemplate">
+    <div class="offer-row">
+      <div>
+        <strong class="offer-store"></strong>
+        <span class="offer-note"></span>
+      </div>
+      <div class="offer-price"></div>
+    </div>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
