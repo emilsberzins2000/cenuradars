@@ -19,6 +19,9 @@ body {
   font-family: Inter, Segoe UI, Arial, sans-serif;
   color: var(--text);
   background: linear-gradient(180deg, #f4f7fc, #eef3fb);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .hero {
@@ -79,7 +82,8 @@ h1 {
 .stat span { color: #c6d4f7; }
 
 .container {
-  padding: 24px 20px 56px;
+  padding: 24px 20px 40px;
+  flex: 1 0 auto;
 }
 
 .ad-banner {
@@ -264,10 +268,42 @@ h1 {
   font-size: 1.05rem;
 }
 
+.footer {
+  border-top: 1px solid rgba(209, 213, 219, 0.8);
+  padding: 14px 20px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  background: #f8fafc;
+  flex-shrink: 0;
+}
+
+.footer-inner {
+  width: min(1180px, 100%);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  align-items: center;
+}
+
+.footer a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 900px) {
   .hero__inner,
   .results-grid,
   .filters {
     grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
